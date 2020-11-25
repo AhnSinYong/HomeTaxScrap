@@ -80,7 +80,6 @@ public class HomeTax {
      * 홈택스 관련 추가 정보
      * NTS_REQUEST_SYSTEM_CODE_P : [TXPP]로그인시 / [TEET]전자세금계산서 / [TECR]현금영수증
      */
-
     public static void main(String args[]) throws Exception {
         HomeTax fm = new HomeTax();
         //fm.getTaxTypeFromNts("1112275759");
@@ -133,8 +132,6 @@ public class HomeTax {
         cookies.put("TXPPsessionID",res.cookies().get("TXPPsessionID"));
 
         if(res.body().contains("[ET") == false) {
-            //taxScraping(cookies);
-            //cashScraping(cookies);
             scraping(cookies , "TECR" , cookies);
         }
 
